@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C ward</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .backvideo{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+   
+            table-layout: fixed;
+        }
+
+        table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 60px;
+            }
+
+            .aligned-image {
+                width: 600px;
+            }
+
+            table td img {
+                width: 600px;
+            }
+        }
+        @media (min-aspect-ratio: 16/9){
+            .backvideo{
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-aspect-ratio: 16/9){
+            .backvideo{
+                width: auto;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <video autoplay loop muted plays-inline class="backvideo">
+            <source src="../storm_-_55618 (Original).mp4">
+        </video>
+
+
+        <header>
+            <h1>Forecasts for the Next 3 Days</h1>
+            <p style="text-align: center;"><img src="../C ward/boxplot1.jpg" alt="forecast image" class="aligned-image"></p>
+<main>
+            <section >
+               <center>
+                <img src="../C ward/1dayleadtime_2023.jpg" alt="1 day lead_time_series_cnn_2023" style = "min-width: 300px;width:30%">
+                       <img src="../C ward/2dayleadtime_2023.jpg" alt="2 day lead_time_series_cnn_2023" style = "min-width: 300px;width:30%">
+                      <img src="../C ward/3dayleadtime_2023.jpg" alt="3 day lead_time_series_cnn_2023" style = "min-width: 300px;width:30%">
+			</center>
+            </section>
+
+</main>
+        </header>
+	     <h1>Hindcasts for 2022</h1>
+ <main>
+             <section>
+                <center>
+                 <img src="../C ward/1 day lead_time_series_cnn_2022.jpg" alt="1 day lead_time_series_cnn_2022.jpg" style = "min-width: 300px;width:30%">
+                        <img src="../C ward/2 day lead_time_series_cnn_2022.jpg" alt="2 day lead_time_series_cnn_2022.jpg" style = "min-width: 300px;width:30%">
+                       <img src="../C ward/3 day lead_time_series_cnn_2022.jpg" alt="3 day lead_time_series_cnn_2022.jpg" style = "min-width: 300px;width:30%">
+                         </center>
+             </section>
+</main>
+
+    </div>
+
+</body>
+</html>

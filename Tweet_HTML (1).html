@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* CSS to style the iframe container */
+    .iframe-container {
+      display: flex; /* Use flexbox to arrange the iframes */
+      justify-content: space-between/* Distribute iframes evenly across the container */
+    }
+
+    /* Style for individual iframes */
+    .iframe-container iframe {
+      border: 1px solid #ccc; /* Add borders to separate iframes (optional) */
+    }
+    .iframe-figure {
+  margin: 1px; /* Adjust the margin to reduce space between containers */
+  .table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make the container take the full viewport height */
+}
+  table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: auto; /* Adjust the width as needed */
+  max-width: 800px; /* Set a maximum width for larger screens */
+  }
+}
+    
+}
+  </style>
+<head>
+<title>Twitter Analytics</title>
+
+</head>
+
+<body>
+  
+<table border=1, align="center">
+  <tr>
+    <th>Bubbleplot of Tweets by Ward (Cumulative) <br> Click on the bubble to view the number of tweets</th>
+    <th>Tweet Location in 48 Hours</th>
+  </tr>
+  <tr>
+    <td><iframe src="bubbleplot.html" width="400" height="600" title="Cumulative Tweet Count (click on the bubble)"></iframe></td>
+    <td><iframe src="location24.html" width="400" height="600" title="Tweet Location in the past 48 Hrs"></iframe></td>   </tr>
+ </table>
+ <h3 align= "center">Spatial Variability of Tweets on the previous rainy days</h3>
+<table border=1, align="center">
+  <tr>
+    <th>25-09-2023</object></th>
+    <th>26-09-2023</th>
+  </tr>
+  <tr>
+    <td><iframe src="variability_day_1.html" width="400" height="600" title="Cumulative Tweet Count (click on the bubble)"></iframe></td>
+    <td><iframe src="variability_day_2.html" width="400" height="600" title="Tweet Location in the past 48 Hrs"></iframe></td> </tr>
+ </table>
+</body>
+</html>
