@@ -30,59 +30,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-#pic1 {
-    height: 500px;
-    width: 350px;
-}
-
-/* Media query for screens between 760px and 992px (md) */
-@media (min-width: 770px) and (max-width: 992px) {
-    #pic1 {
-        height: 550px; /* Adjust the height for medium screens */
-        width: 1000px; /* Adjust the width for medium screens */
-    }
-}
-
-/* Media query for screens larger than 992 pixels (lg) */
-@media (min-width: 992px) {
-    #pic1 {
-        height: 600px; /* Adjust the height for larger screens */
-        width: 1000px; /* Adjust the width for larger screens */
-    }
-}
-
-/* Media query for screens larger than 1200 pixels (xl) */
-@media (min-width: 1200px) {
-    #pic1 {
-        height: 600px; /* Adjust the height for extra-large screens */
-        width: 1000px; /* Adjust the width for extra-large screens */
-    }
-}
-
-
-
-img {
-    height: 400px;
-    width: 350px;
-}
-
-/* Media query for screens larger than 992 pixels (lg) */
-@media (min-width: 992px) {
-    img {
-        height: 600px; /* Adjust the height for larger screens */
-        width: 400px; /* Adjust the width for larger screens */
-    }
-}
-
-/* Media query for screens larger than 1200 pixels (xl) */
-@media (min-width: 1200px) {
-    img {
-        height: 500px; /* Adjust the height for extra-large screens */
-        width: 500px; /* Adjust the width for extra-large screens */
-    }
-}
-    </style>
 </head>
 
 <body>
@@ -107,7 +54,14 @@ img {
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="project.html" class="nav-item nav-link">Crowdsourcing</a>
-                        <a href="aws.html" class="nav-item nav-link">AWS Statics</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Historical Flood Data</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="hfd.html" class="dropdown-item">Rainfall Data</a>
+                                <a href="Automation/aws2.html" class="dropdown-item"></a>
+                                 
+                            </div>
+                        </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rainfall</a>
                             <div class="dropdown-menu m-0">
@@ -129,130 +83,61 @@ img {
         <!-- Navbar & Hero End -->
 
 
-        <!-- Projects Start -->
         <div class="container-xxl py-5">
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     
-                    <h1 class="text-center mb-5">Relation of Varying Rainfall with Positivity Ratio</h1>
+                    <h1 class="text-center mb-5">Key Contributers</h1>
                 </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    
-                </div>
-                <div class="row g-4 portfolio-container">
-                    <div class="col-lg-12 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                               <img id="pic1" src="img/Picture1.png">
-                                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light rounded">
+                            <div class="text-center border-bottom p-4">
+                                <img class="img-fluid rounded-circle mb-4" src="img/subimal.jpeg" alt="">
+                                <h5>Prof. Subimal Ghosh</h5>
+                                <span>Designation</span>
                             </div>
-                            
-                        </div>
-                        <br>
-                        <br>
-                        <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    
-                            <h1 class="text-center mb-5">Sentiment Analysis (2017-2022): Important Negative Words in the Tweets</h1>
+                            <div class="d-flex justify-content-center p-4">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture2.jpg">
-                                
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light rounded">
+                            <div class="text-center border-bottom p-4">
+                                <img class="img-fluid rounded-circle mb-4" src="img/guddu.jpeg" alt="">
+                                <h5>Prof. Raghu Murtugudde</h5>
+                                <span>Designation</span>
                             </div>
-                            
+                            <div class="d-flex justify-content-center p-4">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture3.jpg">
-                                
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item bg-light rounded">
+                            <div class="text-center border-bottom p-4">
+                                <img class="img-fluid rounded-circle mb-4" src="img/aniket.jpeg" alt="">
+                                <h5>Aniket Navalkar</h5>
+                                <span>Designation</span>
                             </div>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                   
-                    
-                    
-                </div>
-            </div>
-            
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    
-                    <h1 class="text-center mb-5">Tweets with negative sentiments and elevation</h1>
-                </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    
-                </div>
-                <div class="row g-4 portfolio-container">
-                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture5.jpg">
-                                
+                            <div class="d-flex justify-content-center p-4">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture4.jpg">
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    
-                    
-                </div>
-            </div>
-            <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    
-                    <h1 class="text-center mb-5">Total Negative Tweets from 2017-2022 and their spatial correspondence to VGI information </h1>
-                </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                    
-                </div>
-                <div class="row g-4 portfolio-container">
-                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                        
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture6.png">
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img src="img/Picture7.png">
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    
-                    
                 </div>
             </div>
         </div>
-        <!-- Projects End -->
         
 
         <!-- Footer Start -->
