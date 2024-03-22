@@ -31,116 +31,57 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-
-         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-        }
-        .container1 {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden; 
-            
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(desk.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-        }
-        .container1:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity value (0.5) as needed */
-            z-index: -1; /* Ensure it stays behind the content */
-        }
-        .content {
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            position: relative; /* Ensure that the text remains on top */
-            z-index: 1; /* Ensure it stays on top of the pseudo-element */
-        }
-.container2 {
-  display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  
-}
-
-.image-container {
-  width: 50%;
-}
-
-.image-container img {
-  width: 100%;
-  height: 550px; /* Maintain aspect ratio */
-}
-
-.text-container {
-  width: 50%;
-  padding: 60px;
-}
-
-.text-container h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.text-container p {
-  font-size: 1em;
-  line-height: 1.5;
-}
-    
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .content {
-                font-size: 18px;
-            }
-            .btn {
-                padding: 8px 16px;
-            }
-        }
-    
-        @media screen and (max-width: 480px) {
-            .content {
-                font-size: 16px;
-            }
-            .btn {
-                padding: 6px 12px;
-            }
-        }
-iframe {
+#pic1 {
     height: 500px;
+    width: 350px;
+}
+
+/* Media query for screens between 760px and 992px (md) */
+@media (min-width: 770px) and (max-width: 992px) {
+    #pic1 {
+        height: 550px; /* Adjust the height for medium screens */
+        width: 1000px; /* Adjust the width for medium screens */
+    }
+}
+
+/* Media query for screens larger than 992 pixels (lg) */
+@media (min-width: 992px) {
+    #pic1 {
+        height: 600px; /* Adjust the height for larger screens */
+        width: 1000px; /* Adjust the width for larger screens */
+    }
+}
+
+/* Media query for screens larger than 1200 pixels (xl) */
+@media (min-width: 1200px) {
+    #pic1 {
+        height: 600px; /* Adjust the height for extra-large screens */
+        width: 1000px; /* Adjust the width for extra-large screens */
+    }
+}
+
+
+
+img {
+    height: 400px;
     width: 350px;
 }
 
 /* Media query for screens larger than 992 pixels (lg) */
 @media (min-width: 992px) {
-    iframe {
+    img {
         height: 600px; /* Adjust the height for larger screens */
         width: 400px; /* Adjust the width for larger screens */
     }
-    
 }
 
 /* Media query for screens larger than 1200 pixels (xl) */
 @media (min-width: 1200px) {
-    iframe {
-        height: 600px; /* Adjust the height for extra-large screens */
+    img {
+        height: 500px; /* Adjust the height for extra-large screens */
         width: 500px; /* Adjust the width for extra-large screens */
     }
 }
-
     </style>
 </head>
 
@@ -166,14 +107,7 @@ iframe {
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="project.html" class="nav-item nav-link">Crowdsourcing</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Historical Flood Data</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="hfd.html" class="dropdown-item">Rainfall Data</a>
-                                <a href="Automation/aws2.html" class="dropdown-item"></a>
-                                 
-                            </div>
-                        </div>
+                        <a href="aws.html" class="nav-item nav-link">AWS Statics</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rainfall</a>
                             <div class="dropdown-menu m-0">
@@ -187,140 +121,138 @@ iframe {
                     
                 </div>
             </nav>
-            <div class="container1">
-                <div class="content">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h1 style="color: white;">Dreading the Mumbai floods this monsoon?<br>
-                        Fill the waterlog length form below. <br>
-                        It’s time for action. Help us help you.</h1>
-                    <h5 style="color: white;">Flood forecasting can help Mumbai. 
-                        Let us help you make it happen.</h5>
-                    <a href="form.html" class="btn" style="display: inline-block;
-                    padding: 10px 20px;
-                    margin-top: 100px;
-                    margin-right: 400px;
-                    background-color: #cd711b;
-                    color: #fff;
-                    text-decoration: none;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;">Form</a>
-                    <a href="#" class="btn" style="display: inline-block;
-                    padding: 10px 20px;
-                    margin-top: 100px;
-                    
-                    background-color: #cd711b;
-                    color: #fff;
-                    text-decoration: none;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;">Weather Widget</a>
-                </div>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                
             </div>
-            <!-- <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-middle">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white animated slideInDown">Mumbai Flood Warning System</h1>
-                            <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-                            <a href="#abcd" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href="about.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start align-items-middle">
-                            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15078.461199767102!2d72.91238524999999!3d19.12452545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695620928962!5m2!1sen!2sin"
-                    allowfullscreen=""   loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
         <!-- Navbar & Hero End -->
 
-        <div class="container2">
-            <div class="image-container">
-              <img src="aa.jpg" alt="Image description">
-            </div>
-            <div class="text-container">
-              <h1 style="color: white;">We developed a flood warning system for Mumbai...</h1>
-              <br>
-              <h5 style="color: #f59337;">Who we are and What do we do</h5>
-              <br>
-              <h5 style="color: white;">The "Mumbai Urban Flood Living Lab" is an innovative citizen-driven initiative that seamlessly integrates AI/ML-powered rainfall forecasting, real-time crowdsourced flood data, and advanced hydro-meteorological flood modelling. This project intends to provide accurate flood forecasting, and enable real-time flood monitoring in the city of Mumbai by making the citizens as primary stakeholders.</h5>
-            </div>
-          </div>
-        <!-- Feature Start -->
-        <div class="container-xxl py-5" id="abcd">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.3s" style="margin: auto;">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <img src="download.jpg" alt="Search Icon" class="img-fluid text-primary mb-4" style="height: 4em; width: 4em;">
-
-                            <h5 class="mb-3">IIT Bombay</h5>
-                            <p class="m-0">This project has received funding and support from the HDFC ERGO - IIT Bombay Innovation Lab, a
-                                partnership between HDFC ERGO General Insurance Company Ltd. and Indian Institute of Technology
-                                Bombay committed to support innovation and entrepreneurship in insurance and related areas.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
-
-        <!-- About Start -->
-        
-        <!-- About End -->
-
-
-        <!-- Facts Start -->
-        
-        <!-- Facts End -->
-
-
-        <!-- Service Start -->
-        
-        <!-- Service End -->
-
-
-        <!-- Newsletter Start -->
-        <div class="container-xxl bg-primary newsletter py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 text-center">
-                        
-                        <h1 class="text-center text-white mb-4">Stay Always In Touch</h1>
-                        <p class="text-white mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Newsletter End -->
-
 
         <!-- Projects Start -->
-        
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <h1 class="text-center mb-5">Relation of Varying Rainfall with Positivity Ratio</h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-12 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                               <img id="pic1" src="img/Picture1.png">
+                                
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <br>
+                        <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    
+                            <h1 class="text-center mb-5">Sentiment Analysis (2017-2022): Important Negative Words in the Tweets</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                        
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture2.jpg">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture3.jpg">
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                   
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <h1 class="text-center mb-5">Tweets with negative sentiments and elevation</h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                        
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture5.jpg">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture4.jpg">
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <h1 class="text-center mb-5">Total Negative Tweets from 2017-2022 and their spatial correspondence to VGI information </h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-6 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                        
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture6.png">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img src="img/Picture7.png">
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
         <!-- Projects End -->
-
-
-        <!-- Testimonial Start -->
-        
-        <!-- Testimonial End -->
-
-
-        <!-- Team Start -->
-       
-        <!-- Team End -->
         
 
         <!-- Footer Start -->
@@ -399,7 +331,7 @@ iframe {
 
 
         <!-- Back to Top -->
-        
+       
     </div>
 
     <!-- JavaScript Libraries -->
