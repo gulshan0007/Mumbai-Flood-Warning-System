@@ -100,6 +100,12 @@
   font-size: 1em;
   line-height: 1.5;
 }
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
     
         /* Responsive Styles */
         @media screen and (max-width: 768px) {
@@ -198,26 +204,75 @@ iframe {
                         It’s time for action. Help us help you.</h1>
                     <h5 style="color: white;">Flood forecasting can help Mumbai. 
                         Let us help you make it happen.</h5>
-                    <a href="form.html" class="btn" style="display: inline-block;
-                    padding: 10px 20px;
-                    margin-top: 100px;
-                    margin-right: 400px;
-                    background-color: #cd711b;
-                    color: #fff;
-                    text-decoration: none;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;">Form</a>
-                    <a href="#" class="btn" style="display: inline-block;
-                    padding: 10px 20px;
-                    margin-top: 100px;
+                        <button href="form.html" style="
+                        width: 200px;
+                        padding: 15px 0;
+                        text-align: center;
+                        margin: 20px 10px;
+                        border-radius: 25px;
+                        font-weight: bold;
+                        border: 2px solid #009688;
+                        background: transparent;
+                        color: #fff;
+                        cursor: pointer;
+                        position: relative;
+                        overflow: hidden;
+                        transition: border 0.5s;
+                        "
+                        onmouseover="this.style.border = 'none'; this.querySelector('span').style.width = '100%';"
+                        onmouseout="this.style.border = '2px solid #009688'; this.querySelector('span').style.width = '0';"
+                    >
+                        <span style="
+                            background: #009688;
+                            height: 100%;
+                            width: 0;
+                            border-radius: 25px;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            z-index: -1;
+                            transition: 0.5s;
+                        "></span>
+                        Form
+                    </button>
                     
-                    background-color: #cd711b;
-                    color: #fff;
-                    text-decoration: none;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;">Weather Widget</a>
+
+
+
+
+                    <button href="form.html" style="
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: border 0.5s;
+    "
+    onmouseover="this.style.border = 'none'; this.querySelector('span').style.width = '100%';"
+    onmouseout="this.style.border = '2px solid #009688'; this.querySelector('span').style.width = '0';"
+>
+    <span style="
+        background: #009688;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    "></span>
+    Weather Widget
+</button>
+
+                    
                 </div>
             </div>
             <!-- <div class="container-xxl bg-primary hero-header">
