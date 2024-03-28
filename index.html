@@ -11,8 +11,8 @@
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
       rel="stylesheet"
@@ -39,6 +39,638 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <style>
+      /* Styles for the popup */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999; /* Ensure it appears on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Adjust width as needed */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+     h5.marquee-text {
+      animation: marquee 10s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      left: 100%;
+      color: white;
+    }
+
+    @keyframes marquee {
+      0% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+:root {
+    --primary: black;
+    --secondary: #FBA504;
+    --light: #F6F4F9;
+    --dark: #04000B;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Heading ***/
+h1,
+h2,
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+h3,
+h4,
+.fw-semi-bold {
+    font-weight: 600 !important;
+}
+
+h5,
+h6,
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    position: relative;
+    margin-right: 25px;
+    padding: 35px 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--light) !important;
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--secondary) !important;
+}
+
+.navbar-light .navbar-brand h1 {
+    color: #FFFFFF;
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--dark) !important;
+    }
+
+    .navbar-light .navbar-brand h1 {
+        color: var(--primary);
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #FFFFFF;
+    }
+
+    .sticky-top.navbar-light .navbar-brand h1 {
+        color: var(--primary);
+    }
+
+    .navbar-light .navbar-nav .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+
+    .navbar-light .btn {
+        color: var(--dark);
+        background: #FFFFFF;
+    }
+
+    .sticky-top.navbar-light .btn {
+        color: var(--dark);
+        background: var(--secondary);
+    }
+}
+
+
+/*** Hero Header ***/
+.hero-header {
+    margin-bottom: 6rem;
+    padding: 18rem 0;
+  
+    background-position:
+        left 0px top 0px,
+        right 0px top 0px,
+        left 0px bottom 0px,
+        right 0px bottom 0px,
+        center center,
+        center bottom;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 991.98px) {
+    .hero-header {
+        padding: 6rem 0 9rem 0;
+    }
+}
+
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.section-title span:first-child,
+.section-title span:last-child {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    width: 30px;
+    height: 2px;
+}
+
+.section-title span:last-child {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+.section-title span:first-child::after,
+.section-title span:last-child::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    top: 0;
+    right: -20px;
+}
+
+.section-title span:last-child::after {
+    right: auto;
+    left: -20px;
+}
+
+.section-title.text-primary span:first-child,
+.section-title.text-primary span:last-child,
+.section-title.text-primary span:first-child::after,
+.section-title.text-primary span:last-child::after {
+    background: var(--primary);
+}
+
+.section-title.text-secondary span:first-child,
+.section-title.text-secondary span:last-child,
+.section-title.text-secondary span:first-child::after,
+.section-title.text-secondary span:last-child::after {
+    background: var(--secondary);
+}
+
+.section-title.text-white span:first-child,
+.section-title.text-white span:last-child,
+.section-title.text-white span:first-child::after,
+.section-title.text-white span:last-child::after {
+    background: #FFFFFF;
+}
+
+
+/*** Feature ***/
+.feature-item {
+    transition: .5s;
+}
+
+.feature-item:hover {
+    margin-top: -15px;
+}
+
+
+/*** About ***/
+.progress {
+    height: 5px;
+}
+
+.progress .progress-bar {
+    width: 0px;
+    transition: 3s;
+}
+
+
+/*** Fact ***/
+.fact {
+    margin: 6rem 0;
+    background:
+        url(../img/blob-top-left.png),
+        url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png),
+        url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
+    background-position:
+        left 0px top 0px,
+        right 0px top 0px,
+        left 0px bottom 0px,
+        right 0px bottom 0px,
+        center center;
+    background-repeat: no-repeat;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    padding: 45px 30px;
+    background: var(--light);
+    overflow: hidden;
+    transition: .5s;
+}
+
+.service-item:hover {
+    margin-top: -15px;
+    padding-bottom: 60px;
+    background: var(--primary);
+}
+
+.service-item .service-icon {
+    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    background: url(../img/blob-primary.png) center center no-repeat;
+    background-size: contain;
+    transition: .5s;
+}
+
+.service-item:hover .service-icon {
+    color: var(--dark);
+    background: url(../img/blob-secondary.png) center center no-repeat;
+    background-size: contain;
+}
+
+.service-item h5,
+.service-item p {
+    transition: .5s;
+}
+
+.service-item:hover h5,
+.service-item:hover p {
+    color: #FFFFFF;
+}
+
+.service-item a.btn {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary);
+    background: #FFFFFF;
+    border-radius: 40px 40px 0 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+.service-item a.btn:hover {
+    color: var(--dark);
+    background: var(--secondary);
+}
+
+.service-item:hover a.btn {
+    bottom: 0;
+}
+
+
+/*** Project Portfolio ***/
+#portfolio-flters li {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--dark);
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+
+#portfolio-flters li:hover,
+#portfolio-flters li.active {
+    
+}
+
+
+
+.portfolio-item:hover img {
+    
+}
+
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(98, 34, 204, .9);
+    transition: .5s;
+    opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    
+}
+
+
+/*** Newsletter ***/
+.newsletter {
+    margin: 6rem 0;
+    background:
+        url(../img/blob-top-left.png),
+        url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png),
+        url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
+    background-position:
+        left 0px top 0px,
+        right 0px top 0px,
+        left 0px bottom 0px,
+        right 0px bottom 0px,
+        center center;
+    background-repeat: no-repeat;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .testimonial-item {
+    padding: 0 30px 30px 30px;
+}
+
+.testimonial-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin: 0 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: var(--light);
+    border-radius: 60px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+
+/*** Team ***/
+.team-item .btn {
+    color: var(--primary);
+    background: #FFFFFF;
+}
+
+.team-item .btn:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+
+/*** Footer ***/
+.footer {
+    margin-top: 6rem;
+    padding-top: 9rem;
+    background:
+        
+        url(../img/map.png);
+    background-position:
+        center top,
+        center center;
+    background-repeat: no-repeat;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid rgba(256, 256, 256, .1);
+    border-radius: 40px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-weight: normal;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+    color: var(--secondary);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+.footer .copyright a:hover,
+.footer .footer-menu a:hover {
+    color: var(--secondary);
+}
       body {
         margin: 0;
         padding: 0;
@@ -166,11 +798,13 @@
 
   <body>
     <div class="container-xxl bg-white p-0">
+      
       <!-- Spinner Start -->
 
       <!-- Spinner End -->
 
       <!-- Navbar & Hero Start -->
+
       <div class="container-xxl position-relative p-0">
         <nav
           class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -224,18 +858,23 @@
             </div>
           </div>
         </nav>
+        
         <div class="container1">
           <div class="content">
             <br />
+            <h5 style="color: white"  class="marquee-text">
+              Important information relay as text for the day. The text will keep updating from our database.
+            </h5>
             <br />
             <br />
+            
             <br />
-            <h1 style="color: white">
+            <h1 style="color: rgb(209, 209, 76)">
               Dreading the Mumbai floods this monsoon?<br />
               Fill the waterlog length form below. <br />
               It’s time for action. Help us help you.
             </h1>
-            <h5 style="color: white">
+            <h5 style="color: white"  >
               Flood forecasting can help Mumbai. Let us help you make it happen.
             </h5>
             <button
@@ -311,26 +950,11 @@
             </button>
           </div>
         </div>
-        <!-- <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-middle">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white animated slideInDown">Mumbai Flood Warning System</h1>
-                            <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
-                            <a href="#abcd" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href="about.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start align-items-middle">
-                            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15078.461199767102!2d72.91238524999999!3d19.12452545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695620928962!5m2!1sen!2sin"
-                    allowfullscreen=""   loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-      </div>
-      <!-- Navbar & Hero End -->
 
+        
+      </div>
+      
+      
       <div class="container2">
         <div class="image-container">
           <img src="aa.jpg" alt="Image description" />
@@ -353,6 +977,88 @@
           </h5>
         </div>
       </div>
+<hr>
+<br>
+<h1 style="text-align: center; color: blue;">REAL TIME RAINFALL FORECAST</h1><br>
+
+      <div class="container2">
+        
+        
+        <div class="text-container">
+          <h1 style="color: white">
+            We developed a flood warning system for Mumbai...
+          </h1>
+          <br />
+          <h5 style="color: #f59337">Who we are and What do we do</h5>
+          <br />
+          <h5 style="color: white">
+            The "Mumbai Urban Flood Living Lab" is an innovative citizen-driven
+            initiative that seamlessly integrates AI/ML-powered rainfall
+            forecasting, real-time crowdsourced flood data, and advanced
+            hydro-meteorological flood modelling. This project intends to
+            provide accurate flood forecasting, and enable real-time flood
+            monitoring in the city of Mumbai by making the citizens as primary
+            stakeholders.
+          </h5>
+        </div>
+        <div class="image-container">
+          <img src="aa.jpg" alt="Image description" />
+        </div>
+      </div>
+      <hr>
+<br>
+<h1 style="text-align: center; color: blue;">FLOODING</h1><br>
+
+      <div class="container2">
+        
+        <div class="image-container">
+          <img src="aa.jpg" alt="Image description" />
+        </div>
+        <div class="text-container">
+          <h1 style="color: white">
+            We developed a flood warning system for Mumbai...
+          </h1>
+          <br />
+          <h5 style="color: #f59337">Who we are and What do we do</h5>
+          <br />
+          <h5 style="color: white">
+            The "Mumbai Urban Flood Living Lab" is an innovative citizen-driven
+            initiative that seamlessly integrates AI/ML-powered rainfall
+            forecasting, real-time crowdsourced flood data, and advanced
+            hydro-meteorological flood modelling. This project intends to
+            provide accurate flood forecasting, and enable real-time flood
+            monitoring in the city of Mumbai by making the citizens as primary
+            stakeholders.
+          </h5>
+        </div>
+      </div><hr>
+      <br>
+      <h1 style="text-align: center; color: blue;">CROWDSOURCING</h1><br>
+      
+            <div class="container2">
+              
+              
+              <div class="text-container">
+                <h1 style="color: white">
+                  We developed a flood warning system for Mumbai...
+                </h1>
+                <br />
+                <h5 style="color: #f59337">Who we are and What do we do</h5>
+                <br />
+                <h5 style="color: white">
+                  The "Mumbai Urban Flood Living Lab" is an innovative citizen-driven
+                  initiative that seamlessly integrates AI/ML-powered rainfall
+                  forecasting, real-time crowdsourced flood data, and advanced
+                  hydro-meteorological flood modelling. This project intends to
+                  provide accurate flood forecasting, and enable real-time flood
+                  monitoring in the city of Mumbai by making the citizens as primary
+                  stakeholders.
+                </h5>
+              </div>
+              <div class="image-container">
+                <img src="aa.jpg" alt="Image description" />
+              </div>
+            </div>
       <!-- Feature Start -->
       <div class="container-xxl py-5" id="abcd">
         <div class="container py-5 px-lg-5">
@@ -383,19 +1089,6 @@
           </div>
         </div>
       </div>
-      <!-- Feature End -->
-
-      <!-- About Start -->
-
-      <!-- About End -->
-
-      <!-- Facts Start -->
-
-      <!-- Facts End -->
-
-      <!-- Service Start -->
-
-      <!-- Service End -->
 
       <!-- Newsletter Start -->
       <div
@@ -429,19 +1122,59 @@
           </div>
         </div>
       </div>
-      <!-- Newsletter End -->
 
-      <!-- Projects Start -->
+      <button id="openPopupButton" class="btn btn-primary">Open Form</button>
 
-      <!-- Projects End -->
-
-      <!-- Testimonial Start -->
-
-      <!-- Testimonial End -->
-
-      <!-- Team Start -->
-
-      <!-- Team End -->
+<!-- Popup Form -->
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span class="close" id="closePopup">&times;</span>
+    <form method="post" class="row g-3">
+      <div class="row">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" name="name" class="form-control" id="name" placeholder="(optional)">
+      </div>
+      <div class="col-md-12">
+        <label for="height" class="form-label">Your height* (cm):</label>
+        <input type="number" name="height" class="form-control" id="height" required>
+      </div>
+      <div class="col-12 form-options">
+        <p class="form-label">Select the Water Level (choose nearest options):</p>
+        <div class="d-flex flex-wrap">
+          <div class="form-check flex-grow-1">
+            <input class="form-check-input" type="radio" name="waterlevel" id="waterlevelOption1" value="option1">
+            <label class="form-check-label d-block" for="waterlevelOption1">
+              <img src="./img/form_img/1.png" alt="Option 1" class="img-fluid">
+            </label>
+          </div>
+          <div class="form-check flex-grow-1">
+            <input class="form-check-input" type="radio" name="waterlevel" id="waterlevelOption2" value="option2">
+            <label class="form-check-label d-block" for="waterlevelOption2">
+              <img src="./img/form_img/2.png" alt="Option 2" class="img-fluid">
+            </label>
+          </div>
+          <div class="form-check flex-grow-1">
+            <input class="form-check-input" type="radio" name="waterlevel" id="waterlevelOption3" value="option3">
+            <label class="form-check-label d-block" for="waterlevelOption3">
+              <img src="./img/form_img/3.png" alt="Option 3" class="img-fluid">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="location" class="form-label">Location of water level:</label>
+        <input type="text" name="location" class="form-control" id="location" placeholder="kindly fill if didn't provide GPS access">
+      </div>
+      <!-- Hidden input fields for latitude and longitude -->
+      <input type="hidden" name="latitude" id="latitude">
+      <input type="hidden" name="longitude" id="longitude">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary" id='sendCode'>Submit</button>
+      </div>
+    </form> 
+  </div>
+</div>
+     
 
       <!-- Footer Start -->
       <div
@@ -585,5 +1318,39 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+      // Get the popup and button elements
+var popup = document.getElementById('popupForm');
+var openButton = document.getElementById('openPopupButton');
+var closeButton = document.getElementById('closePopup');
+
+// Flag to track if the form has been closed
+var formClosed = false;
+
+// Function to open the popup
+function openPopup() {
+  if (!formClosed) {
+    popup.style.display = 'block';
+  }
+}
+
+// Function to close the popup
+function closePopup() {
+  popup.style.display = 'none';
+  formClosed = true;
+}
+
+// Event listeners for opening and closing the popup
+openButton.addEventListener('click', openPopup);
+closeButton.addEventListener('click', closePopup);
+
+// Show popup when user scrolls down
+window.addEventListener('scroll', function() {
+  if (!formClosed && window.scrollY > 3500) { // Adjust the value based on when you want the popup to appear
+    openPopup();
+  }
+});
+
+    </script>
   </body>
 </html>
